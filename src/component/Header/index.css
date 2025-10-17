@@ -1,0 +1,42 @@
+.header_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  height: 10vh;
+}
+
+.movie_name {
+  margin: 0px;
+  color: white;
+}
+.input_search_cont {
+  display: flex;
+  width: 410px;
+  justify-content: space-between;
+}
+.input_box {
+  height: 30px;
+  width: 350px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+.search_button {
+  background-color: #6b6969;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+.pages-cont {
+  display: flex;
+  width: 300px;
+  justify-content: space-between;
+}
+.page_button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 18px;
+}

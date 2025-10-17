@@ -1,0 +1,25 @@
+.list_cont {
+  margin-right: 20px;
+  margin-top: 10px;
+  width: 300px;
+}
+.img_style {
+  height: 200px;
+  width: 250px;
+  border-radius: 10px;
+}
+.movie_head {
+  color: white;
+  font-size: 16px;
+}
+.movie_para {
+  color: white;
+}
+.view_button {
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 100px;
+  background-color: #6b6969;
+  color: white;
+}
