@@ -2,7 +2,7 @@ import './index.css'
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import Header from '../Header'
-import CastView from '../CastView'
+import Cast from '../Cast'
 
 const apiStatusConstant = {
   initial: 'INITIAL',
@@ -40,22 +40,8 @@ class SingleMovieDetail extends Component {
       releaseDate: movieData.release_date,
     }
 
-    const castResponse = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=5ca85eab821a4ec8ac78f3aeebeee7f5&language=en`,
-    )
-    const castData = await castResponse.json()
-    console.log(castData)
-    const castDataList = castData.cast.map(each => ({
-      id: each.id,
-      profileImage: each.profile_path,
-      originalName: each.original_name,
-      characterName: each.character,
-    }))
-    console.log(castData)
-
     this.setState({
       initialMovieDetail: movieDetail,
-      initialCastList: castDataList,
       apiStatus: apiStatusConstant.success,
     })
   }
@@ -95,15 +81,7 @@ class SingleMovieDetail extends Component {
           </div>
         </div>
 
-        <div>
-          <h1 className="movie_detail_head">Cast details</h1>
-
-          <ul className="unorder_cast_list">
-            {initialCastList.map(each => (
-              <CastView key={each.id} details={each} />
-            ))}
-          </ul>
-        </div>
+        <Cast />
       </>
     )
   }

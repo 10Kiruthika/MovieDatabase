@@ -6,7 +6,7 @@ class MovieItem extends Component {
   render() {
     const {details} = this.props
     const {id, image, name, rating} = details
-
+    console.log(image)
     return (
       <li className="list_cont">
         <img
