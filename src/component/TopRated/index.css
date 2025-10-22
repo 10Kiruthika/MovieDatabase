@@ -18,3 +18,19 @@
   flex-wrap: wrap;
   list-style-type: none;
 }
+.page_cont {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 30px;
+}
+.page_button {
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  width: 80px;
+  color: white;
+}
+.page_para {
+  color: white;
+}
