@@ -22,14 +22,14 @@ class Upcoming extends Component {
       'https://api.themoviedb.org/3/movie/upcoming?api_key=5ca85eab821a4ec8ac78f3aeebeee7f5&language=en-US&page=1',
     )
     const data = await response.json()
-    console.log(data)
+
     const moviesList = data.results.map(each => ({
       id: each.id,
       image: each.poster_path,
       name: each.title,
       rating: each.vote_average,
     }))
-    console.log(moviesList)
+
     this.setState({
       initialList: moviesList,
       apiStatus: apiStatusConstant.success,

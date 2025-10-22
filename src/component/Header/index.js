@@ -20,19 +20,21 @@ class Header extends Component {
   }
 
   render() {
+    const {inputVal} = this.state
     return (
       <nav className="header_container">
         <h1 className="movie_name">movieDB</h1>
 
         <form className="input_search_cont" onSubmit={this.clickButton}>
           <input
-            type="search"
+            type="text"
             className="input_box"
             placeholder="Search movies"
             onChange={this.clickInput}
+            value={inputVal}
           />
           <button type="submit" className="search_button">
-            search
+            Search
           </button>
         </form>
 

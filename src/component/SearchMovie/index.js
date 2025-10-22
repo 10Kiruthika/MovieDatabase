@@ -20,7 +20,6 @@ class SearchMovie extends Component {
 
   renderApi = async () => {
     const {userInput} = this.context
-
     this.setState({apiStatus: apiStatusConstant.loading})
 
     console.log(userInput)
@@ -28,7 +27,9 @@ class SearchMovie extends Component {
       `https://api.themoviedb.org/3/search/movie?api_key=5ca85eab821a4ec8ac78f3aeebeee7f5&language=en-US&query=${userInput}&page=1`,
     )
     const data = await response.json()
+
     console.log(data)
+
     const moviesList = data.results.map(each => ({
       id: each.id,
       image: each.poster_path,
@@ -51,9 +52,9 @@ class SearchMovie extends Component {
     const {filterList} = this.state
     return (
       <ul className="unorder_list">
-        {filterList.map(each => (
-          <MovieItem details={each} key={each.id} />
-        ))}
+        {filterList.length > 0
+          ? filterList.map(each => <MovieItem details={each} key={each.id} />)
+          : 'null'}
       </ul>
     )
   }

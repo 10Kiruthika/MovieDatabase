@@ -4,8 +4,8 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import HomePopular from './component/HomePopular'
 import TopRated from './component/TopRated'
 import Upcoming from './component/Upcoming'
-import SearchMovie from './component/SearchMovie'
 import SingleMovieDetail from './component/SingleMovieDetail'
+import SearchMovie from './component/SearchMovie'
 import SearchContext from './SearchContext'
 
 // write your code here
@@ -14,7 +14,7 @@ class App extends Component {
 
   clickedSearchButton = value => {
     console.log(value)
-    this.setState({userInput: value.toLowerCase()})
+    this.setState({userInput: value})
   }
 
   render() {
@@ -31,7 +31,7 @@ class App extends Component {
             <Route exact path="/" component={HomePopular} />
             <Route exact path="/top-rated" component={TopRated} />
             <Route exact path="/upcoming" component={Upcoming} />
-            <Route exact path="/:id" component={SingleMovieDetail} />
+            <Route exact path="/movie/:id" component={SingleMovieDetail} />
             <Route exact path="/search" component={SearchMovie} />
           </Switch>
         </BrowserRouter>

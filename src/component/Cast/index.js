@@ -35,7 +35,7 @@ class Cast extends Component {
       originalName: each.original_name,
       characterName: each.character,
     }))
-    console.log(castData)
+
     this.setState({
       initialCastList: castDataList,
       apiStatus: apiStatusConstant.success,
@@ -55,9 +55,10 @@ class Cast extends Component {
         <h1 className="movie_detail_head">Cast details</h1>
 
         <ul className="unorder_cast_list">
-          {initialCastList.map(each => (
-            <CastView key={each.id} details={each} />
-          ))}
+          {initialCastList.length > 0 &&
+            initialCastList.map(each => (
+              <CastView key={each.id} details={each} />
+            ))}
         </ul>
       </div>
     )

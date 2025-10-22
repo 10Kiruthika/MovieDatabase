@@ -13,7 +13,6 @@ class SingleMovieDetail extends Component {
   state = {
     apiStatus: apiStatusConstant.initial,
     initialMovieDetail: {},
-    initialCastList: [],
   }
 
   componentDidMount() {
@@ -29,7 +28,7 @@ class SingleMovieDetail extends Component {
       `https://api.themoviedb.org/3/movie/${id}?api_key=5ca85eab821a4ec8ac78f3aeebeee7f5&language=en-US`,
     )
     const movieData = await response.json()
-    console.log(movieData)
+
     const movieDetail = {
       id: movieData.id,
       movieImage: movieData.poster_path,
@@ -53,7 +52,7 @@ class SingleMovieDetail extends Component {
   )
 
   renderSuccess = () => {
-    const {initialMovieDetail, initialCastList} = this.state
+    const {initialMovieDetail} = this.state
     const {
       movieImage,
       movieName,
@@ -62,7 +61,6 @@ class SingleMovieDetail extends Component {
       overview,
       releaseDate,
     } = initialMovieDetail
-    console.log(movieImage)
     return (
       <>
         <h1 className="movie_detail_head">Movie details</h1>
@@ -75,7 +73,6 @@ class SingleMovieDetail extends Component {
           <div className="content_container">
             <h1 className="movie_detail_name">{movieName}</h1>
             <p className="single_para">Rating: {rating}</p>
-            <p className="single_para">Genre: {genre[0].name}</p>
             <p className="single_para">Released on {releaseDate}</p>
             <p className="single_para">{overview}</p>
           </div>
