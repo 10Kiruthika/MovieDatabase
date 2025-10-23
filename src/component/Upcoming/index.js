@@ -55,7 +55,7 @@ class Upcoming extends Component {
   )
 
   renderSuccess = () => {
-    const {initialList, pageNo} = this.state
+    const {initialList} = this.state
     return (
       <>
         <ul className="unorder_list">
@@ -63,23 +63,6 @@ class Upcoming extends Component {
             <MovieItem details={each} key={each.id} />
           ))}
         </ul>
-        <div className="page_cont">
-          <button
-            className="page_button"
-            onClick={this.clickPrev}
-            type="button"
-          >
-            Prev
-          </button>
-          <p className="page_para">{pageNo}</p>
-          <button
-            className="page_button"
-            onClick={this.clickNext}
-            type="button"
-          >
-            Next
-          </button>
-        </div>
       </>
     )
   }
@@ -97,10 +80,28 @@ class Upcoming extends Component {
   }
 
   render() {
+    const {pageNo} = this.state
     return (
       <div className="background_cont">
         <Header />
         <div className="home_container">{this.renderSwitchcase()}</div>
+        <div className="page_cont">
+          <button
+            className="page_button"
+            onClick={this.clickPrev}
+            type="button"
+          >
+            Prev
+          </button>
+          <p className="page_para">{pageNo}</p>
+          <button
+            className="page_button"
+            onClick={this.clickNext}
+            type="button"
+          >
+            Next
+          </button>
+        </div>
       </div>
     )
   }

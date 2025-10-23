@@ -34,7 +34,6 @@ class SingleMovieDetail extends Component {
       movieImage: movieData.poster_path,
       movieName: movieData.title,
       rating: movieData.vote_average,
-      genre: movieData.genres,
       overview: movieData.overview,
       releaseDate: movieData.release_date,
     }
@@ -57,7 +56,6 @@ class SingleMovieDetail extends Component {
       movieImage,
       movieName,
       rating,
-      genre,
       overview,
       releaseDate,
     } = initialMovieDetail
